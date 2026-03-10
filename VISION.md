@@ -7,6 +7,10 @@ Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a
 - **Tema Central:** Espacial. 🚀
 - **Lore:** Un pequeño robot astronauta ha estrellado su nave y necesita explorar planetas cuadriculados para recuperar sus engranajes y piezas perdidas. Estética colorida, estrellas, cráteres de cómic y animaciones simpáticas de gravedad cero.
 - **Iconografía:** Uso de un "Engranaje Dorado" como meta (target) y un "Cohete de Despegue" como botón de ejecución (Play).
+- **Audio & Feedback:**
+  - Éxito: Fanfarria de "Triunfo Espacial" al recoger el engranaje.
+  - Error/Colisión: Sonido de "error-bip" robótico y cambio de color del rastro a rojo.
+  - Ejecución: Sonido de ignición de motores al pulsar el botón Cohete.
 
 ## Pilares de Diseño (Restricciones Cognitivas)
 1. **Atención Volátil:** Feedback visual y sonoro inmediato en cada interacción.
