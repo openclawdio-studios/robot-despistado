@@ -6,11 +6,13 @@ Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a
 ## Temática y Dirección de Arte
 - **Tema Central:** Espacial. 🚀
 - **Lore:** Un pequeño robot astronauta ha estrellado su nave y necesita explorar planetas cuadriculados para recuperar sus engranajes y piezas perdidas. Estética colorida, estrellas, cráteres de cómic y animaciones simpáticas de gravedad cero.
+- **Iconografía:** Uso de un "Engranaje Dorado" como meta (target) y un "Cohete de Despegue" como botón de ejecución (Play).
 
 ## Pilares de Diseño (Restricciones Cognitivas)
 1. **Atención Volátil:** Feedback visual y sonoro inmediato en cada interacción.
 2. **Cero Texto Requerido:** Toda la interfaz debe ser icónica (iconos grandes, colores de alto contraste) para niños en etapa de pre-lectoescritura.
 3. **Tolerancia a la Frustración:** Si el robot choca o no llega, la animación debe ser cómica, sin pantallas rojas de "Game Over". Se incentiva la repetición.
+4. **Onboarding (Tutorial Invisible):** El Nivel 1 debe restringir las acciones del niño, permitiendo solo arrastrar la flecha correcta y guiándolo con una mano animada parpadeante.
 
 ## Calidad y Testing (QA)
 - **Cobertura Obligatoria:** Todos los componentes críticos (motor de ejecución, parser de JSON de niveles, validación de lógica direccional) deben estar respaldados por pruebas automatizadas.
