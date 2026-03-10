@@ -5,6 +5,6 @@ import App from './App';
 describe('App', () => {
   it('renders correctly', () => {
     render(<App />);
-    expect(screen.getByText('Open up App.tsx to start working on your app!')).toBeTruthy();
+    expect(screen.getByText('Robot Despistado')).toBeTruthy();
   });
 });
