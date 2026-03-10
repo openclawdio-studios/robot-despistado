@@ -1,11 +1,11 @@
 # Proyecto: El Robot Despistado
 
 ## Visión de Producto
-Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a niños de 5 a 7 años. Su objetivo es introducir la lógica computacional temprana (programación por bloques) a través de la resolución de rompecabezas visuales. El jugador ayuda a un simpático robot a alcanzar sus piezas perdidas arrastrando bloques de dirección (Arriba, Abajo, Izquierda, Derecha) a una línea de tiempo (timeline) de ejecución.
+Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a niños de 5 a 7 años. Su objetivo es introducir la lógica computacional temprana (programación por bloques) a través de la resolución de rompecabezas visuales. El jugador ayuda a un simpático robot llamado **Robotin** a alcanzar sus piezas perdidas arrastrando bloques de dirección (Arriba, Abajo, Izquierda, Derecha) a una línea de tiempo (timeline) de ejecución.
 
 ## Temática y Dirección de Arte
 - **Tema Central:** Espacial. 🚀
-- **Lore:** Un pequeño robot astronauta ha estrellado su nave y necesita explorar planetas cuadriculados para recuperar sus engranajes y piezas perdidas. Estética colorida, estrellas, cráteres de cómic y animaciones simpáticas de gravedad cero.
+- **Lore:** **Robotin**, un pequeño robot astronauta, ha estrellado su nave y necesita explorar planetas cuadriculados para recuperar sus engranajes y piezas perdidas. Estética colorida, estrellas, cráteres de cómic y animaciones simpáticas de gravedad cero.
 - **Iconografía:** Uso de un "Engranaje Dorado" como meta (target) y un "Cohete de Despegue" como botón de ejecución (Play).
 - **Gamificación:** "Monedas de Estrellas" opcionales repartidas por los niveles para incentivar la exploración y optimización de rutas.
 - **Audio & Feedback:**
@@ -18,7 +18,7 @@ Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a
 1. **Atención Volátil:** Feedback visual y sonoro inmediato en cada interacción.
 2. **Cero Texto Requerido:** Toda la interfaz debe ser icónica para niños.
 3. **Tolerancia a la Frustración:** Animaciones cómicas de fallo, incentivo a la repetición.
-4. **Onboarding (Tutorial Invisible):** Nivel 1 restrictivo con guía visual (InstructionHand).
+4. **Onboarding (Tutorial Invisible):** Nivel 1 restrictivo con guía visual (InstructionHand) para enseñar el funcionamiento básico de **Robotin**.
 
 ## Calidad y Testing (QA)
 - **Cobertura Obligatoria:** Jest y React Native Testing Library para componentes y lógica.
