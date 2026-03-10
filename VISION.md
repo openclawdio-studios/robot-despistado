@@ -3,10 +3,18 @@
 ## Visión de Producto
 Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a niños de 5 a 7 años. Su objetivo es introducir la lógica computacional temprana (programación por bloques) a través de la resolución de rompecabezas visuales. El jugador ayuda a un simpático robot a alcanzar sus piezas perdidas arrastrando bloques de dirección (Arriba, Abajo, Izquierda, Derecha) a una línea de tiempo (timeline) de ejecución.
 
+## Temática y Dirección de Arte
+- **Tema Central:** Espacial. 🚀
+- **Lore:** Un pequeño robot astronauta ha estrellado su nave y necesita explorar planetas cuadriculados para recuperar sus engranajes y piezas perdidas. Estética colorida, estrellas, cráteres de cómic y animaciones simpáticas de gravedad cero.
+
 ## Pilares de Diseño (Restricciones Cognitivas)
 1. **Atención Volátil:** Feedback visual y sonoro inmediato en cada interacción.
 2. **Cero Texto Requerido:** Toda la interfaz debe ser icónica (iconos grandes, colores de alto contraste) para niños en etapa de pre-lectoescritura.
 3. **Tolerancia a la Frustración:** Si el robot choca o no llega, la animación debe ser cómica, sin pantallas rojas de "Game Over". Se incentiva la repetición.
+
+## Calidad y Testing (QA)
+- **Cobertura Obligatoria:** Todos los componentes críticos (motor de ejecución, parser de JSON de niveles, validación de lógica direccional) deben estar respaldados por pruebas automatizadas.
+- **Herramientas:** Jest para pruebas unitarias y de lógica, y React Native Testing Library para pruebas de renderizado de componentes.
 
 ## Stack Tecnológico
 - **Framework:** React Native con Expo
