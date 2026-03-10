@@ -5,6 +5,7 @@ import { CommandType } from '../types/commands';
 interface CommandBlockProps {
   type: CommandType;
   size?: number;
+  disabled?: boolean;
 }
 
 const getIcon = (type: CommandType) => {
@@ -16,10 +17,23 @@ const getIcon = (type: CommandType) => {
   }
 };
 
-export const CommandBlock: React.FC<CommandBlockProps> = ({ type, size = 60 }) => {
+export const CommandBlock: React.FC<CommandBlockProps> = ({ type, size = 60, disabled }) => {
   return (
-    <View style={[styles.block, { width: size, height: size }]} testID={`command-block-${type}`}>
-      <Text style={[styles.icon, { fontSize: size * 0.6 }]}>{getIcon(type)}</Text>
+    <View 
+      style={[
+        styles.block, 
+        { width: size, height: size },
+        disabled && styles.disabledBlock
+      ]} 
+      testID={`command-block-${type}`}
+    >
+      <Text style={[
+        styles.icon, 
+        { fontSize: size * 0.6 },
+        disabled && styles.disabledIcon
+      ]}>
+        {getIcon(type)}
+      </Text>
     </View>
   );
 };
@@ -39,7 +53,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
+  disabledBlock: {
+    backgroundColor: '#ccc',
+    borderColor: '#999',
+    elevation: 0,
+    shadowOpacity: 0,
+  },
   icon: {
     textAlign: 'center',
+  },
+  disabledIcon: {
+    opacity: 0.3,
   },
 });
