@@ -34,6 +34,7 @@ Una aplicación interactiva para dispositivos móviles (Android/iOS) orientada a
 - **Épica 4:** Onboarding y Tutorial (El profesor virtual)
 - **Épica 5:** Gamificación y Coleccionables (Estrellas)
 - **Épica 6:** Compliance Infantil y Despliegue (Play Store)
+  - *Restricción estricta:* Aplicación 100% offline, sin IAP (In-App Purchases), sin anuncios y SIN analíticas ni recolección de datos (GDPR-K / COPPA compliance).
 
 ## Arquitectura Multi-Agente
 Gobernado por OpenClawdio via GitHub Issues (1 Issue = 1 Rama = 1 PR).
