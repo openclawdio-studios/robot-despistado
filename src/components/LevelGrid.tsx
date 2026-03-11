@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { CommandType } from '../types/commands';
+import { IconManager } from './IconManager';
 
 export interface Position {
   x: number;
@@ -44,20 +45,23 @@ export const LevelGrid: React.FC<LevelGridProps> = ({ level }) => {
       for (let x = 0; x < sizeX; x++) {
         let cellStyle = styles.emptyCell;
         let testID = `cell-empty-${x}-${y}`;
+        let content = null;
 
         if (isRobot(x, y)) {
-          cellStyle = styles.robotCell;
           testID = `cell-robot-${x}-${y}`;
+          content = <IconManager name="robot" size={24} color="#3b82f6" />;
         } else if (isTarget(x, y)) {
-          cellStyle = styles.targetCell;
           testID = `cell-target-${x}-${y}`;
+          content = <IconManager name="target" size={24} color="#fbbf24" />;
         } else if (isObstacle(x, y)) {
-          cellStyle = styles.obstacleCell;
           testID = `cell-obstacle-${x}-${y}`;
+          content = <IconManager name="obstacle" size={24} color="#ef4444" />;
         }
 
         row.push(
-          <View key={`${x}-${y}`} style={[styles.cell, cellStyle]} testID={testID} />
+          <View key={`${x}-${y}`} style={[styles.cell, cellStyle]} testID={testID}>
+            {content}
+          </View>
         );
       }
       cells.push(
@@ -88,17 +92,10 @@ const styles = StyleSheet.create({
     margin: 2,
     borderWidth: 1,
     borderColor: '#000',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   emptyCell: {
     backgroundColor: '#fff',
-  },
-  robotCell: {
-    backgroundColor: 'blue',
-  },
-  targetCell: {
-    backgroundColor: 'gold',
-  },
-  obstacleCell: {
-    backgroundColor: 'gray',
   },
 });

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { CommandType } from '../types/commands';
+import { IconManager, IconName } from './IconManager';
 
 interface CommandBlockProps {
   type: CommandType;
@@ -8,16 +9,17 @@ interface CommandBlockProps {
   disabled?: boolean;
 }
 
-const getIcon = (type: CommandType) => {
+const getIconName = (type: CommandType): IconName => {
   switch (type) {
-    case 'UP': return '⬆️';
-    case 'DOWN': return '⬇️';
-    case 'LEFT': return '⬅️';
-    case 'RIGHT': return '➡️';
+    case 'UP': return 'up';
+    case 'DOWN': return 'down';
+    case 'LEFT': return 'left';
+    case 'RIGHT': return 'right';
   }
 };
 
 export const CommandBlock: React.FC<CommandBlockProps> = ({ type, size = 60, disabled }) => {
+  const iconSize = size * 0.6;
   return (
     <View 
       style={[
@@ -27,13 +29,11 @@ export const CommandBlock: React.FC<CommandBlockProps> = ({ type, size = 60, dis
       ]} 
       testID={`command-block-${type}`}
     >
-      <Text style={[
-        styles.icon, 
-        { fontSize: size * 0.6 },
-        disabled && styles.disabledIcon
-      ]}>
-        {getIcon(type)}
-      </Text>
+      <IconManager 
+        name={getIconName(type)} 
+        size={iconSize} 
+        color={disabled ? '#999' : '#333'} 
+      />
     </View>
   );
 };
@@ -58,11 +58,5 @@ const styles = StyleSheet.create({
     borderColor: '#999',
     elevation: 0,
     shadowOpacity: 0,
-  },
-  icon: {
-    textAlign: 'center',
-  },
-  disabledIcon: {
-    opacity: 0.3,
   },
 });
