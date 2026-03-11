@@ -5,6 +5,7 @@ import { LevelGrid, LevelData } from './src/components/LevelGrid';
 import { CommandPalette } from './src/components/CommandPalette';
 import { Timeline } from './src/components/Timeline';
 import { InstructionHand } from './src/components/InstructionHand';
+import { VirtualProfessor, EmotionState } from './src/components/VirtualProfessor';
 import { Command, CommandType } from './src/types/commands';
 import level1Data from './src/assets/level1.json';
 
@@ -13,6 +14,7 @@ const level1 = level1Data as LevelData;
 export default function App() {
   const [commands, setCommands] = useState<Command[]>([]);
   const [level] = useState<LevelData>(level1);
+  const [profState, setProfState] = useState<EmotionState>('idle');
 
   const handleAddCommand = (type: CommandType) => {
     const newCommand: Command = {
@@ -20,16 +22,24 @@ export default function App() {
       type,
     };
     setCommands([...commands, newCommand]);
+    setProfState('happy');
+    setTimeout(() => setProfState('idle'), 1500);
   };
 
   const handleRemoveCommand = (id: string) => {
     setCommands(commands.filter(cmd => cmd.id !== id));
+    setProfState('surprise');
+    setTimeout(() => setProfState('idle'), 1500);
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Robot Despistado</Text>
       
+      <View style={styles.header}>
+        <VirtualProfessor state={profState} />
+      </View>
+
       <View style={styles.content}>
         <LevelGrid level={level} />
         
@@ -68,8 +78,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 40,
-    marginBottom: 20,
+    marginBottom: 10,
     color: '#333',
+  },
+  header: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
   },
   content: {
     flex: 1,
