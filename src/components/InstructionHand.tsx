@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
+import { IconManager } from './IconManager';
 
 interface InstructionHandProps {
   startX: number;
@@ -46,7 +47,7 @@ export const InstructionHand: React.FC<InstructionHandProps> = ({
       pointerEvents="none"
     >
       <View style={styles.hand}>
-        <Animated.Text style={styles.icon}>☝️</Animated.Text>
+        <IconManager name="hand" size={30} color="#ffeb3b" style={styles.icon} />
       </View>
     </Animated.View>
   );
@@ -64,6 +65,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    fontSize: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    elevation: 5,
   },
 });
