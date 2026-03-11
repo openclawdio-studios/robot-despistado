@@ -1,5 +1,5 @@
 import { CommandType, PathStep } from '../types/commands';
-import { LevelData, Position } from '../components/LevelGrid';
+import { LevelData, Position } from '../types/level';
 
 export const calculateGhostPath = (
   level: LevelData,

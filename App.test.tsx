@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react-native';
 import App from './App';
 
 describe('App', () => {
-  it('renders correctly', () => {
+  it('renders level selector correctly', () => {
     render(<App />);
-    expect(screen.getByText('Robot Despistado')).toBeTruthy();
+    expect(screen.getByText('Selecciona Nivel')).toBeTruthy();
   });
 });

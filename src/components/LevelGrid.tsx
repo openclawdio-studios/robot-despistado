@@ -1,29 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { CommandType } from '../types/commands';
-
-export interface Position {
-  x: number;
-  y: number;
-}
-
-export interface TutorialStep {
-  type: string;
-  startX: number;
-  startY: number;
-  endX: number;
-  endY: number;
-}
-
-export interface LevelData {
-  sizeX: number;
-  sizeY: number;
-  robotPos: Position;
-  targetPos: Position;
-  obstacles: Position[];
-  allowedCommands?: CommandType[];
-  tutorialStep?: TutorialStep;
-}
+import { LevelData, Position, TutorialStep } from '../types/level';
 
 interface LevelGridProps {
   level: LevelData;
